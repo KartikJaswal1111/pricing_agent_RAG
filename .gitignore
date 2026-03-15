@@ -1,0 +1,31 @@
+# Environment variables — never commit real secrets
+.env
+
+# Claude AI context file — personal development tool
+CLAUDE.md
+
+# System design — internal documentation
+system_design.md
+
+# ChromaDB vector store (built at runtime)
+pricing_knowledge_db/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
