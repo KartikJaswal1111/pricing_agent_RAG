@@ -2,6 +2,8 @@
 
 An intelligent pricing agent powered by **Retrieval-Augmented Generation (RAG)** that provides data-backed price recommendations by retrieving relevant historical decisions, category benchmarks, and proven strategies before reasoning.
 
+**Live Demo:** [pricing-agent-rag.streamlit.app](https://pricing-agent-rag.streamlit.app/)
+
 ---
 
 ## The Problem
@@ -30,6 +32,12 @@ Structured Recommendation with Citations
 ```
 
 The key difference from a standard LLM prompt: the model never invents facts — it reasons over data you can see and verify.
+
+---
+
+## Screenshot
+
+![Strategic Pricing Agent RAG](running_app.png)
 
 ---
 
@@ -81,8 +89,8 @@ Categories covered: **Electronics · Footwear · Clothing · Luxury Goods**
 
 ```bash
 # Clone the repo
-git clone <your-repo-url>
-cd pricing_agent_with_RAG
+git clone https://github.com/KartikJaswal1111/pricing_agent_RAG
+cd pricing_agent_RAG
 
 # Create virtual environment
 python -m venv venv
@@ -111,6 +119,16 @@ cp .env.example .env
 docker compose up --build
 ```
 
+### Streamlit Community Cloud
+
+The app is deployed and publicly accessible at [pricing-agent-rag.streamlit.app](https://pricing-agent-rag.streamlit.app/) — no setup required.
+
+To deploy your own instance:
+1. Fork this repo
+2. Go to [share.streamlit.io](https://share.streamlit.io) and connect your GitHub
+3. Set `GROQ_API_KEY` in the Secrets settings
+4. Deploy
+
 > **First run:** Downloads the embedding model (~90 MB) and builds the vector store. Subsequent runs load from cache and start instantly.
 
 ---
@@ -129,12 +147,6 @@ docker compose up --build
 
 ---
 
-## Screenshot
-
-> Coming soon
-
----
-
 ## License
 
-MIT
+MIT — [Kartik Jaswal](https://github.com/KartikJaswal1111)
