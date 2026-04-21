@@ -7,6 +7,11 @@ load_dotenv()
 
 st.set_page_config(page_title="AI Strategic Pricing Agent (RAG)", layout="wide")
 
+
+@st.cache_resource
+def load_agent(api_key: str) -> RAGPricingAgent:
+    return RAGPricingAgent(api_key=api_key)
+
 st.title("🤖 Strategic Pricing Agent — RAG Enhanced")
 st.markdown("""
 This agent uses **Retrieval-Augmented Generation (RAG)** to ground every price
@@ -55,7 +60,7 @@ if st.button("Run RAG Analysis", type="primary"):
     else:
         try:
             with st.spinner("Building knowledge base & retrieving relevant examples…"):
-                agent = RAGPricingAgent(api_key=api_key)
+                agent = load_agent(api_key)
 
             with st.spinner("Agent is reasoning with retrieved context…"):
                 recommendation = agent.get_price_recommendation(
